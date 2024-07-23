@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.svg">
+    <title>O2RUS register</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" type="module"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Набор персонала</h1>
+    </header>
+
+    <main>
+      <section class="register">
+        <h2 hidden>Журнал регистрации</h2>
+        <form class="register-form" id="form">
+          <div class="register-item">
+            <label for="from">Откуда:</label>
+            <select id="from" name="from-list" form="form">
+              <option value="все">Все</option>
+            </select>
+          </div>
+          <div class="register-item">
+            <label for="to">Получатель:</label>
+            <select id="to" name="to-list" form="form">
+              <option value="все">Все</option>
+            </select>
+          </div>
+          <div class="register-item">
+            <label for="status">Статус:</label>
+            <select id="status" name="status-list" form="form">
+              <option value="все">Все</option>
+            </select>
+          </div>
+          <button class="form-button" type="submit">Найти</button>
+        </form>
+        <button class="create-button" type="button">Создать</button>
+        <button class="pattern-button" type="button">Шаблоны</button>
+      </section>
+
+      <section class="table">
+        <h2 hidden>Таблица</h2>
+        <table class="table-block">
+          <thead class="table-head">
+            <tr>
+              <th>ФИО</th>
+              <th>Менеджер</th>
+              <th>Телефон</th>
+              <th>Возраст</th>
+              <th>Область / Край</th>
+              <th>Длина прицепа</th>
+              <th>Стаж на фурах</th>
+              <th>Источник</th>
+              <th>ФИО кто привел</th>
+              <th>Результат СБ</th>
+              <th>Начальник колонны</th>
+              <th>Выписка мед осмотра</th>
+              <th>Комментарий</th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <tr>
+              <td>Нелединский Олег Владимирович</td>
+              <td>ХГЛ</td>
+              <td>89821329004</td>
+              <td>01.01.1985</td>
+              <td>Омская обл</td>
+              <td>16</td>
+              <td>10</td>
+              <td>авито</td>
+              <td>Иванов Иван Иванович</td>
+              <td>с ограничениями</td>
+              <td>Назаров</td>
+              <td>полный оформляет сам</td>
+              <td>Жду пройденный м/о. Пока на вахте, в конце месяца. Списываемся 30.03.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="modal">
+        <h2 hidden>Модальное окно</h2>
+        <button class="modal-close-button" type="button"></button>
+        <div class="modal-wrapper">
+          <form class="modal-form" id="modal-form">
+            <div class="modal-item">
+              <label for="name">ФИО</label>
+              <input type="text" id="name">
+            </div>
+            <div class="modal-item">
+              <label for="manager">Менеджер</label>
+              <select id="manager" name="manager" form="modal-form">
+                <option value="все">Все</option>
+              </select>
+            </div>
+            <div class="modal-item">
+              <label for="tel">Телефон</label>
+              <input type="tel" id="tel">
+            </div>
+            <div class="modal-button">
+              <button class="match-button" type="button">Проверить на совпадение в БД</button>
+            </div>
+            <div class="modal-item">
+              <label for="age">Возраст</label>
+              <input type="number" id="age">
+            </div>
+            <div class="modal-item">
+              <label for="area">Область / Край</label>
+              <select id="area" name="area" form="modal-form">
+                <option value="все">Все</option>
+              </select>
+            </div>
+            <div class="modal-item">
+              <label for="trailer">Длина прицепа</label>
+              <select id="trailer" name="trailer" form="modal-form">
+                <option value="все">Все</option>
+              </select>
+            </div>
+            <div class="modal-item">
+              <label for="experience">Стаж на фурах</label>
+              <input type="number" id="experience">
+            </div>
+            <div class="modal-item">
+              <label for="source">Источник</label>
+              <select id="source" name="source" form="modal-form">
+                <option value="все">Все</option>
+              </select>
+            </div>
+            <div class="modal-item">
+              <label for="advisor">ФИО кто привел</label>
+              <input type="text" id="advisor">
+            </div>
+            <div class="modal-item">
+              <label for="verify">Результат СБ</label>
+              <select id="verify" name="verify" form="modal-form">
+                <option value="все">Все</option>
+              </select>
+            </div>
+            <div class="modal-item">
+              <label for="leader">Начальник колонны</label>
+              <select id="leader" name="leader" form="modal-form">
+                <option value="все">Все</option>
+              </select>
+            </div>
+            <div class="modal-item">
+              <label for="medical">Выписка мед.осмотра</label>
+              <select id="medical" name="medical" form="modal-form">
+                <option value="все">Все</option>
+              </select>
+            </div>
+            <div class="modal-item">
+              <label for="comment">Комментарий</label>
+              <input type="text" id="comment">
+            </div>
+            <div class="modal-button">
+              <button class="save-button" type="submit">Сохранить</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
